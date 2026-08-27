@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Emily Almeida Angelo | Infraestrutura, Suporte & Redes</title>
+  <meta name="description" content="Portfólio profissional de Emily Almeida Angelo - Estudante de ADS e Estagiária de TI na CAS Tecnologia. Suporte Técnico N1/N2, Redes Cisco CCNA, Linux, IAM e Segurança da Informação.">
+  <meta name="keywords" content="Emily Angelo, Suporte Técnico, Infraestrutura, Redes, CCNA, IAM, Linux, CAS Tecnologia, Segurança da Informação, ADS">
+  <meta name="author" content="Emily Almeida Angelo">
+  <meta name="theme-color" content="#0B0F19">
+
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Emily Almeida Angelo | Portfólio Profissional de TI">
+  <meta property="og:description" content="Estudante de ADS e Estagiária de TI. Suporte Técnico, Infraestrutura, Redes e Segurança da Informação.">
+  <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230B0F19'/><text x='50' y='55' font-size='32' fill='%2300E5FF' font-family='monospace' text-anchor='middle'>EA</text></svg>">
+
+  <!-- Google Fonts: Inter (UI) + JetBrains Mono (Terminal/Código) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Folhas de Estilo Modulares -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Barra Administrativa Flutuante (Oculta por padrão, ativada via Firebase Auth) -->
+  <aside id="admin-bar" class="admin-bar hidden" aria-label="Painel Administrativo">
+    <div class="admin-bar-inner">
+      <div class="admin-status-indicator">
+        <span class="admin-led"></span>
+        <strong>ADMIN MODE ATIVO</strong>
+      </div>
+      <div class="admin-quick-actions">
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('profile')">✏️ Perfil</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('skillCategory')">+ Camada Skill</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('experience')">+ Experiência</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('project')">+ Projeto</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('education')">+ Formação</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('certification')">+ Curso/Cert</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('language')">+ Idioma</button>
+        <button id="admin-reset-btn" class="btn-admin-action btn-admin-danger" type="button" title="Restaurar dados padrão">Restaurar Padrão</button>
+        <button id="admin-logout-btn" class="btn-admin-action btn-admin-logout" type="button">Sair</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Cabeçalho Principal / Barra de Navegação -->
+  <header class="site-header" id="header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="Ir para o topo">
+        <span class="brand-symbol">&gt;_</span>
+        <span class="brand-name">emily.angelo<span class="brand-ext">://infra</span></span>
+      </a>
+
+      <div class="header-telemetry" aria-live="polite">
+        <span class="telemetry-ping-dot"></span>
+        <span class="telemetry-label">SYSTEM: OPERATIONAL</span>
+        <span class="telemetry-divider">|</span>
+        <span id="telemetry-time" class="telemetry-time">00:00:00</span>
+      </div>
+
+      <nav class="site-nav" aria-label="Navegação Principal">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#skills" class="nav-link"><span class="nav-num">01.</span> Competências</a></li>
+          <li><a href="#experience" class="nav-link"><span class="nav-num">02.</span> Experiência</a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-num">03.</span> Labs & Projetos</a></li>
+          <li><a href="#education" class="nav-link"><span class="nav-num">04.</span> Formação</a></li>
+          <li><a href="#contact" class="nav-link nav-link-cta">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botão Hambúrguer para Dispositivos Móveis -->
+      <button id="mobile-menu-toggle" class="mobile-menu-btn" type="button" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- SEÇÃO HERO (Split-Screen com Mini-Terminal) -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        
+        <!-- Coluna Esquerda: Apresentação Profissional -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-indicator-led"></span>
+            <span>Estagiária de TI @ CAS Tecnologia · São Paulo/SP</span>
+            <button type="button" class="btn-admin-icon admin-control" style="margin-left:0.5rem;" onclick="window.adminController.openCrudModal('profile')" title="Editar Perfil">
+              ✏️ Editar Perfil
+            </button>
+          </div>
+
+          <h1 class="hero-title" id="hero-name">Emily Almeida Angelo</h1>
+          <h2 class="hero-subtitle" id="hero-role">Estudante de ADS & Estagiária de TI</h2>
+
+          <p class="hero-summary" id="hero-summary">
+            Estagiária de TI na CAS Tecnologia, atuando com suporte técnico, gestão de contas e acessos (IAM) e apoio à infraestrutura de rede. Estudante de Análise e Desenvolvimento de Sistemas pela UNG (bolsista ProUni).
+          </p>
+
+          <!-- Tags de Foco Técnico -->
+          <div class="hero-focus-tags">
+            <span class="focus-tag">Suporte Técnico & Helpdesk</span>
+            <span class="focus-tag">Redes & Cisco CCNA</span>
+            <span class="focus-tag">Linux & Windows Server</span>
+            <span class="focus-tag">Gestão de Acessos (IAM)</span>
+            <span class="focus-tag">Segurança & Hardening</span>
+            <span class="focus-tag">Python & Automação</span>
+          </div>
+
+          <!-- CTAs e Links Rápidos -->
+          <div class="hero-actions">
+            <a href="#skills" class="btn btn-primary">Explorar Competências</a>
+            <a href="#contact" class="btn btn-secondary">Entrar em Contato</a>
+            <div class="hero-social-links">
+              <a href="https://github.com/emilyangelo" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub de Emily Angelo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/emilyangeloo/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn de Emily Angelo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.3a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Micro-Terminal Interativo -->
+        <div class="hero-terminal-wrapper">
+          <div id="hero-terminal" class="terminal-container" role="region" aria-label="Terminal de Telemetria">
+            <!-- Barra Superior do Terminal -->
+            <div class="terminal-titlebar">
+              <div class="terminal-controls">
+                <span class="terminal-btn btn-close"></span>
+                <span class="terminal-btn btn-minimize"></span>
+                <span class="terminal-btn btn-maximize"></span>
+              </div>
+              <div class="terminal-title">
+                <span class="terminal-title-text">emily@workstation:~ (bash)</span>
+              </div>
+              <div class="terminal-session-status">
+                <span id="terminal-status-dot" class="status-dot"></span>
+              </div>
+            </div>
+
+            <!-- Área de Saída de Linhas -->
+            <div id="terminal-output" class="terminal-body" aria-live="polite">
+              <!-- Preenchido dinamicamente por terminal.js -->
+            </div>
+
+            <!-- Linha de Comando Interativa -->
+            <form id="terminal-form" class="terminal-input-row">
+              <span class="terminal-prompt">emily@workstation:~$</span>
+              <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="iniciando terminal...">
+            </form>
+          </div>
+
+          <!-- Botões de Atalho Rápido para Comandos -->
+          <div id="terminal-chips" class="terminal-chips-row">
+            <button type="button" class="terminal-chip" data-cmd="whoami">&gt; whoami</button>
+            <button type="button" class="terminal-chip" data-cmd="skills">&gt; skills</button>
+            <button type="button" class="terminal-chip" data-cmd="experience">&gt; experience</button>
+            <button type="button" class="terminal-chip" data-cmd="projects">&gt; projects</button>
+            <button type="button" class="terminal-chip" data-cmd="status">&gt; status</button>
+            <button type="button" class="terminal-chip chip-clear" data-cmd="clear">&gt; clear</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 01: ARQUITETURA DE SISTEMAS & PROTOCOLOS -->
+    <section id="skills" class="section-container">
+      <div class="section-header">
+        <div class="section-header-top">
+          <div class="section-tag">01 // ARQUITETURA & TELEMETRIA</div>
+          <button type="button" class="btn-admin-add admin-control" onclick="window.adminController.openCrudModal('skillCategory')">
+            + Adicionar Camada
+          </button>
+        </div>
+        <h2 class="section-title">Pilha Técnica & Camadas de Protocolo</h2>
+        <p class="section-subtitle">
+          Mapeamento estruturado das camadas de conectividade, administração de servidores, segurança da informação e automação.
+        </p>
+      </div>
+
+      <!-- Container das Camadas de Arquitetura (Renderizado dinamicamente por app.js) -->
+      <div id="skills-container" class="systems-stack-wrapper">
+        <!-- Inserido dinamicamente via Firestore / data.js -->
+      </div>
+    </section>
+
+    <!-- SEÇÃO 02: EXPERIÊNCIA PROFISSIONAL -->
+    <section id="experience" class="section-container">
+      <div class="section-header">
+        <div class="section-header-top">
+          <div class="section-tag">02 // HISTÓRICO PRÁTICO</div>
+          <button type="button" class="btn-admin-add admin-control" onclick="window.adminController.openCrudModal('experience')">
+            + Adicionar Experiência
+          </button>
+        </div>
+        <h2 class="section-title">Experiência Profissional</h2>
+        <p class="section-subtitle">
+          Atuação real em suporte técnico, sustentação de infraestrutura, gestão de identidades (IAM) e rotinas operacionais.
+        </p>
+      </div>
+
+      <!-- Matriz de Experiências Profissionais (Renderizada dinamicamente por app.js) -->
+      <div id="experience-container" class="operational-runbook-wrapper">
+        <!-- Inserido dinamicamente via Firestore / data.js -->
+      </div>
+    </section>
+
+    <!-- SEÇÃO 03: LABORATÓRIOS & PROJETOS -->
+    <section id="projects" class="section-container">
+      <div class="section-header">
+        <div class="section-header-top">
+          <div class="section-tag">03 // PROJETOS & LABS</div>
+          <button type="button" class="btn-admin-add admin-control" onclick="window.adminController.openCrudModal('project')">
+            + Adicionar Projeto
+          </button>
+        </div>
+        <h2 class="section-title">Laboratórios & Projetos Práticos</h2>
+        <p class="section-subtitle">
+          Projetos de infraestrutura, redes, segurança e desenvolvimento com documentação e links diretos de acesso.
+        </p>
+      </div>
+
+      <!-- Grid de Projetos com Abas/Botões de Links (Renderizado dinamicamente por app.js) -->
+      <div id="projects-container" class="projects-grid">
+        <!-- Inserido dinamicamente via Firestore / data.js -->
+      </div>
+    </section>
+
+    <!-- SEÇÃO 04: FORMAÇÃO & CERTIFICAÇÕES -->
+    <section id="education" class="section-container">
+      <div class="section-header">
+        <div class="section-header-top">
+          <div class="section-tag">04 // EDUCAÇÃO & DESENVOLVIMENTO</div>
+          <button type="button" class="btn-admin-add admin-control" onclick="window.adminController.openCrudModal('education')">
+            + Adicionar Formação
+          </button>
+        </div>
+        <h2 class="section-title">Formação Acadêmica & Certificações</h2>
+        <p class="section-subtitle">
+          Trilha de aprendizado contínuo, graduação superior e qualificações técnicas especializadas organizadas por domínio de conhecimento.
+        </p>
+      </div>
+
+      <!-- Bento Row Superior: Graduação e Idiomas Balanceados -->
+      <div class="education-bento-top">
+        <!-- Card de Graduação Acadêmica Principal -->
+        <div id="education-container" class="academic-main-card card-elevated">
+          <!-- Inserido dinamicamente via Firestore / data.js -->
+        </div>
+
+        <!-- Card de Idiomas & Proficiência -->
+        <div class="languages-bento-card card-elevated">
+          <div class="card-kicker-row" style="justify-content: space-between;">
+            <span class="card-kicker">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Idiomas & Comunicação
+            </span>
+            <button type="button" class="btn-admin-icon admin-control" onclick="window.adminController.openCrudModal('language')">
+              + Novo
+            </button>
+          </div>
+          <h3 class="languages-card-title">Proficiência Linguística</h3>
+          <div id="languages-container" class="languages-telemetry-list">
+            <!-- Inserido dinamicamente via Firestore / data.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Trilhas de Especialização & Cursos -->
+      <div class="certifications-section-wrapper">
+        <div class="certifications-header-row">
+          <div class="cert-title-group">
+            <h3 class="subsection-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              Qualificações & Cursos Técnicos
+            </h3>
+            <button type="button" class="btn-admin-add admin-control" onclick="window.adminController.openCrudModal('certification')">
+              + Adicionar Curso
+            </button>
+          </div>
+
+          <!-- Filtros Rápidos por Trilha Técnica -->
+          <div class="cert-track-filters" role="tablist">
+            <button class="cert-filter-btn is-active" data-track="all" role="tab">Todas as Trilhas</button>
+            <button class="cert-filter-btn" data-track="networks" role="tab">Redes & Cloud</button>
+            <button class="cert-filter-btn" data-track="dev" role="tab">Programação & Web</button>
+            <button class="cert-filter-btn" data-track="data-ai" role="tab">Dados & IA</button>
+          </div>
+        </div>
+
+        <!-- Grid Dinâmico de Certificações (Renderizado dinamicamente por app.js) -->
+        <div id="courses-container" class="certifications-grid-dynamic">
+          <!-- Inserido dinamicamente via Firestore / data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 05: CONTATO & CONECTIVIDADE -->
+    <section id="contact" class="section-container section-contact">
+      <div class="section-header">
+        <div class="section-tag">05 // CONECTIVIDADE</div>
+        <h2 class="section-title">Canais de Contato & Redes</h2>
+        <p class="section-subtitle">
+          Canais para contato profissional, networking técnico e troca de experiências em TI e Segurança.
+        </p>
+      </div>
+
+      <div class="contact-channels-wrapper">
+        <!-- Canal 1: E-mail -->
+        <div class="contact-action-card card-elevated">
+          <div class="contact-channel-header">
+            <span class="contact-channel-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <div>
+              <h3 class="contact-channel-title">E-mail Profissional</h3>
+              <p class="contact-channel-desc">Comunicação direta para oportunidades e alinhamentos técnicos.</p>
+            </div>
+          </div>
+          <div class="contact-action-buttons">
+            <a href="mailto:emily09.e.y@gmail.com" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+              Enviar Mensagem
+            </a>
+            <button type="button" id="btn-copy-email" class="btn btn-secondary" aria-label="Copiar e-mail">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copiar Endereço
+            </button>
+          </div>
+        </div>
+
+        <!-- Canal 2: LinkedIn -->
+        <div class="contact-action-card card-elevated">
+          <div class="contact-channel-header">
+            <span class="contact-channel-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.3a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z"/></svg>
+            </span>
+            <div>
+              <h3 class="contact-channel-title">LinkedIn</h3>
+              <p class="contact-channel-desc">Conexão corporativa, atualizações e histórico profissional.</p>
+            </div>
+          </div>
+          <div class="contact-action-buttons">
+            <a href="https://www.linkedin.com/in/emilyangeloo/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Conectar no LinkedIn
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Canal 3: GitHub -->
+        <div class="contact-action-card card-elevated">
+          <div class="contact-channel-header">
+            <span class="contact-channel-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </span>
+            <div>
+              <h3 class="contact-channel-title">GitHub</h3>
+              <p class="contact-channel-desc">Laboratórios práticos, scripts de automação e repositórios de código.</p>
+            </div>
+          </div>
+          <div class="contact-action-buttons">
+            <a href="https://github.com/emilyangelo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Explorar Repositórios
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ & CADEADO OCULTO -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-copy">© 2026 Emily Almeida Angelo. Todos os direitos reservados.</span>
+        <span class="footer-meta">ADS UNG • Estagiária de TI • São Paulo/SP</span>
+      </div>
+
+      <div class="footer-right">
+        <span class="footer-telemetry-tag">status: 200 OK | protocol: https</span>
+        
+        <!-- MICRO-CADEADO OCULTO (Admin Gateway Easter Egg) -->
+        <button id="admin-lock-btn" class="admin-hidden-lock-btn" type="button" aria-label="Security Status Key" title="System Security Node">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DE AUTENTICAÇÃO DISCRETO (Login Admin) -->
+  <div id="auth-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+    <div class="modal-dialog card-elevated">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-lock-icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </span>
+          <h3 id="auth-modal-title" class="modal-title">Autenticação Administrativa</h3>
+        </div>
+        <button id="close-auth-modal" class="btn-modal-close" type="button" aria-label="Fechar modal">✕</button>
+      </div>
+      <form id="auth-form" class="modal-body">
+        <p class="modal-help-text">Insira as credenciais de administrador para gerenciar o portfólio via Firebase.</p>
+        
+        <div class="form-group">
+          <label class="form-label" for="auth-email">E-mail</label>
+          <input type="email" id="auth-email" class="form-input" required autocomplete="username" placeholder="emily09.e.y@gmail.com">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="auth-password">Senha</label>
+          <input type="password" id="auth-password" class="form-input" required autocomplete="current-password" placeholder="••••••••">
+        </div>
+
+        <div id="auth-error-msg" class="form-error-msg" aria-live="assertive"></div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary btn-full">Acessar Painel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL CRUD DINÂMICO (Criar / Editar Itens) -->
+  <div id="crud-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="crud-modal-title">
+    <div class="modal-dialog modal-dialog-lg card-elevated">
+      <div class="modal-header">
+        <h3 id="crud-modal-title" class="modal-title">Gerenciar Registro</h3>
+        <button id="close-crud-modal" class="btn-modal-close" type="button" aria-label="Fechar formulário">✕</button>
+      </div>
+      <form id="crud-form" class="modal-body">
+        <div id="crud-fields-container">
+          <!-- Campos inseridos dinamicamente por admin.js -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="window.adminController.closeCrudModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- CONTAINER DE NOTIFICAÇÕES TOAST -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- SCRIPTS MODULARES (FIREBASE SDK v10 MODULAR VIA CDN) -->
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/data.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/terminal.js"></script>
+  <script type="module" src="js/admin.js"></script>
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>

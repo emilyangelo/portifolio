@@ -1,0 +1,361 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN & MEDIA QUERIES
+   Suporte a: 320px, 375px, 390px, 425px, 768px, 1024px, 1280px, 1440px, 1920px
+   ========================================================================== */
+
+/* Prevenção global de scroll horizontal indesejado */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Telas Ultra-Wide / Desktops Grandes (>= 1440px) */
+@media (min-width: 1440px) {
+  .hero-container {
+    gap: 4rem;
+  }
+  
+  .terminal-container {
+    height: 390px;
+  }
+}
+
+/* Laptops / Desktops Médios (1025px a 1439px) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .hero-container {
+    gap: 2.5rem;
+  }
+}
+
+/* Tablets Landscape & Telas Médias (<= 1024px) */
+@media (max-width: 1024px) {
+  .hero-section {
+    padding: 3.5rem 1.5rem 2.5rem;
+    min-height: auto;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-terminal-wrapper {
+    max-width: 100%;
+  }
+
+  .education-bento-top {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .certifications-grid-dynamic {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Tablets Portrait & Telas Médias (<= 768px) */
+@media (max-width: 768px) {
+  .site-header {
+    height: 60px;
+  }
+
+  .header-telemetry {
+    display: none; /* Simplifica o header em telas menores */
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    min-height: 44px;
+    min-width: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #0B0F14;
+    border-bottom: 1px solid var(--border-subtle);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.25rem 1.5rem;
+    gap: 0.75rem;
+    transform: translateY(-160%);
+    transition: transform var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+    z-index: 999;
+  }
+
+  .nav-links.mobile-open {
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-link-cta {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .section-container {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .hero-section {
+    padding: 2.5rem 1.25rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+  }
+
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .hero-social-links {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .social-icon-btn {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .terminal-container {
+    height: 310px;
+  }
+
+  .terminal-chip {
+    min-height: 36px;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certifications-grid-dynamic {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-track-filters {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .cert-filter-btn {
+    flex-shrink: 0;
+    min-height: 38px;
+  }
+
+  .runbook-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-channels-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-action-buttons .btn {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .admin-bar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid var(--border-cyan);
+    border-bottom: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .admin-bar-inner {
+    overflow-x: auto;
+    padding: 0.65rem 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .admin-quick-actions {
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .footer-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Telas Pequenas / Smartphones (<= 480px) */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .hero-badge {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.65rem;
+    flex-wrap: wrap;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-tag {
+    font-size: 0.72rem;
+  }
+
+  .section-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .btn-admin-add {
+    width: 100%;
+    justify-content: center;
+    min-height: 38px;
+  }
+
+  .terminal-titlebar {
+    padding: 0.45rem 0.65rem;
+  }
+
+  .terminal-title {
+    font-size: 0.7rem;
+  }
+
+  .terminal-body {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.76rem;
+  }
+
+  .terminal-input-row {
+    padding: 0.45rem 0.75rem;
+  }
+
+  .protocols-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .protocol-chip {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0.5rem;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-body {
+    overflow-y: auto;
+    padding: 1rem 1.15rem;
+  }
+
+  .modal-header {
+    padding: 1rem 1.15rem;
+    flex-shrink: 0;
+  }
+
+  .modal-footer {
+    padding: 0.85rem 1.15rem;
+    flex-shrink: 0;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* Telas Ultra Compactas (<= 360px - ex: Galaxy Fold fechado / iPhone SE 1st) */
+@media (max-width: 360px) {
+  .brand-ext {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .protocols-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.82rem;
+  }
+}
