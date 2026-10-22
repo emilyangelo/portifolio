@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Emily Almeida Angelo | Infraestrutura, Suporte & Redes</title>
-  <meta name="description" content="Portfólio profissional de Emily Almeida Angelo - Estudante de ADS e Estagiária de TI na CAS Tecnologia. Suporte Técnico N1/N2, Redes Cisco CCNA, Linux, IAM e Segurança da Informação.">
-  <meta name="keywords" content="Emily Angelo, Suporte Técnico, Infraestrutura, Redes, CCNA, IAM, Linux, CAS Tecnologia, Segurança da Informação, ADS">
+  <meta name="description"
+    content="Portfólio profissional de Emily Almeida Angelo - Estudante de ADS e Estagiária de TI na CAS Tecnologia. Suporte Técnico N1/N2, Redes Cisco CCNA, Linux, IAM e Segurança da Informação.">
+  <meta name="keywords"
+    content="Emily Angelo, Suporte Técnico, Infraestrutura, Redes, CCNA, IAM, Linux, CAS Tecnologia, Segurança da Informação, ADS">
   <meta name="author" content="Emily Almeida Angelo">
   <meta name="theme-color" content="#0B0F19">
 
   <!-- Open Graph / Redes Sociais -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Emily Almeida Angelo | Portfólio Profissional de TI">
-  <meta property="og:description" content="Estudante de ADS e Estagiária de TI. Suporte Técnico, Infraestrutura, Redes e Segurança da Informação.">
-  <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230B0F19'/><text x='50' y='55' font-size='32' fill='%2300E5FF' font-family='monospace' text-anchor='middle'>EA</text></svg>">
+  <meta property="og:description"
+    content="Estudante de ADS e Estagiária de TI. Suporte Técnico, Infraestrutura, Redes e Segurança da Informação.">
+  <meta property="og:image"
+    content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230B0F19'/><text x='50' y='55' font-size='32' fill='%2300E5FF' font-family='monospace' text-anchor='middle'>EA</text></svg>">
 
   <!-- Google Fonts: Inter (UI) + JetBrains Mono (Terminal/Código) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon: Terminal SVG Inline em Ciano (#00d2ff) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300d2ff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='4 17 10 11 4 5'%3E%3C/polyline%3E%3Cline x1='12' y1='19' x2='20' y2='19'%3E%3C/line%3E%3C/svg%3E">
+
+  <!-- FontAwesome Icons (para ícones de infraestrutura/segurança) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 
   <!-- Folhas de Estilo Modulares -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
 
   <!-- Barra Administrativa Flutuante (Oculta por padrão, ativada via Firebase Auth) -->
@@ -34,14 +51,22 @@
         <strong>ADMIN MODE ATIVO</strong>
       </div>
       <div class="admin-quick-actions">
-        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('profile')">✏️ Perfil</button>
-        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('skillCategory')">+ Camada Skill</button>
-        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('experience')">+ Experiência</button>
-        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('project')">+ Projeto</button>
-        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('education')">+ Formação</button>
-        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('certification')">+ Curso/Cert</button>
-        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('language')">+ Idioma</button>
-        <button id="admin-reset-btn" class="btn-admin-action btn-admin-danger" type="button" title="Restaurar dados padrão">Restaurar Padrão</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('profile')">✏️
+          Perfil</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('skillCategory')">+
+          Camada Skill</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('experience')">+
+          Experiência</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('project')">+
+          Projeto</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('education')">+
+          Formação</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('certification')">+
+          Curso/Cert</button>
+        <button class="btn-admin-action" type="button" onclick="window.adminController.openCrudModal('language')">+
+          Idioma</button>
+        <button id="admin-reset-btn" class="btn-admin-action btn-admin-danger" type="button"
+          title="Restaurar dados padrão">Restaurar Padrão</button>
         <button id="admin-logout-btn" class="btn-admin-action btn-admin-logout" type="button">Sair</button>
       </div>
     </div>
@@ -73,7 +98,8 @@
       </nav>
 
       <!-- Botão Hambúrguer para Dispositivos Móveis -->
-      <button id="mobile-menu-toggle" class="mobile-menu-btn" type="button" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+      <button id="mobile-menu-toggle" class="mobile-menu-btn" type="button" aria-label="Abrir Menu de Navegação"
+        aria-expanded="false">
         <span class="menu-bar"></span>
         <span class="menu-bar"></span>
         <span class="menu-bar"></span>
@@ -85,13 +111,14 @@
     <!-- SEÇÃO HERO (Split-Screen com Mini-Terminal) -->
     <section id="hero" class="hero-section">
       <div class="hero-container">
-        
+
         <!-- Coluna Esquerda: Apresentação Profissional -->
         <div class="hero-content">
           <div class="hero-badge">
             <span class="status-indicator-led"></span>
             <span>Estagiária de TI @ CAS Tecnologia · São Paulo/SP</span>
-            <button type="button" class="btn-admin-icon admin-control" style="margin-left:0.5rem;" onclick="window.adminController.openCrudModal('profile')" title="Editar Perfil">
+            <button type="button" class="btn-admin-icon admin-control" style="margin-left:0.5rem;"
+              onclick="window.adminController.openCrudModal('profile')" title="Editar Perfil">
               ✏️ Editar Perfil
             </button>
           </div>
@@ -100,7 +127,8 @@
           <h2 class="hero-subtitle" id="hero-role">Estudante de ADS & Estagiária de TI</h2>
 
           <p class="hero-summary" id="hero-summary">
-            Estagiária de TI na CAS Tecnologia, atuando com suporte técnico, gestão de contas e acessos (IAM) e apoio à infraestrutura de rede. Estudante de Análise e Desenvolvimento de Sistemas pela UNG (bolsista ProUni).
+            Estagiária de TI na CAS Tecnologia, atuando com suporte técnico, gestão de contas e acessos (IAM) e apoio à
+            infraestrutura de rede. Estudante de Análise e Desenvolvimento de Sistemas pela UNG (bolsista ProUni).
           </p>
 
           <!-- Tags de Foco Técnico -->
@@ -118,58 +146,49 @@
             <a href="#skills" class="btn btn-primary">Explorar Competências</a>
             <a href="#contact" class="btn btn-secondary">Entrar em Contato</a>
             <div class="hero-social-links">
-              <a href="https://github.com/emilyangelo" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub de Emily Angelo">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <a href="https://github.com/emilyangelo" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+                aria-label="GitHub de Emily Angelo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
               </a>
-              <a href="https://www.linkedin.com/in/emilyangeloo/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn de Emily Angelo">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.3a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z"/></svg>
+              <a href="https://www.linkedin.com/in/emilyangeloo/" target="_blank" rel="noopener noreferrer"
+                class="social-icon-btn" aria-label="LinkedIn de Emily Angelo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.3a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z" />
+                </svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Coluna Direita: Micro-Terminal Interativo -->
-        <div class="hero-terminal-wrapper">
-          <div id="hero-terminal" class="terminal-container" role="region" aria-label="Terminal de Telemetria">
-            <!-- Barra Superior do Terminal -->
-            <div class="terminal-titlebar">
-              <div class="terminal-controls">
-                <span class="terminal-btn btn-close"></span>
-                <span class="terminal-btn btn-minimize"></span>
-                <span class="terminal-btn btn-maximize"></span>
-              </div>
-              <div class="terminal-title">
-                <span class="terminal-title-text">emily@workstation:~ (bash)</span>
-              </div>
-              <div class="terminal-session-status">
-                <span id="terminal-status-dot" class="status-dot"></span>
-              </div>
+        <!-- Coluna Direita: Foto de Perfil Estilizada -->
+        <div class="hero-avatar-wrapper">
+          <div class="profile-avatar-frame">
+            <div class="profile-avatar-glow"></div>
+            <img src="imagens/foto-perfil.jpeg" alt="Foto de Perfil" class="profile-avatar"
+              onerror="this.onerror=null; this.src='imagens/foto-perfil.svg';">
+            <div class="profile-avatar-badge" title="Disponível para novos desafios">
+              <span class="status-indicator-led"></span>
+              <span>Online</span>
             </div>
-
-            <!-- Área de Saída de Linhas -->
-            <div id="terminal-output" class="terminal-body" aria-live="polite">
-              <!-- Preenchido dinamicamente por terminal.js -->
-            </div>
-
-            <!-- Linha de Comando Interativa -->
-            <form id="terminal-form" class="terminal-input-row">
-              <span class="terminal-prompt">emily@workstation:~$</span>
-              <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="iniciando terminal...">
-            </form>
-          </div>
-
-          <!-- Botões de Atalho Rápido para Comandos -->
-          <div id="terminal-chips" class="terminal-chips-row">
-            <button type="button" class="terminal-chip" data-cmd="whoami">&gt; whoami</button>
-            <button type="button" class="terminal-chip" data-cmd="skills">&gt; skills</button>
-            <button type="button" class="terminal-chip" data-cmd="experience">&gt; experience</button>
-            <button type="button" class="terminal-chip" data-cmd="projects">&gt; projects</button>
-            <button type="button" class="terminal-chip" data-cmd="status">&gt; status</button>
-            <button type="button" class="terminal-chip chip-clear" data-cmd="clear">&gt; clear</button>
           </div>
         </div>
 
       </div>
+
+      <!-- Indicador de Rolagem Discreto (Scroll Indicator) -->
+      <a href="#skills" class="hero-scroll-indicator" aria-label="Rolar para a Seção de Arquitetura e Competências">
+        <span class="scroll-indicator-text">scroll down</span>
+        <span class="scroll-indicator-chevron" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </span>
+      </a>
     </section>
 
     <!-- SEÇÃO 01: ARQUITETURA DE SISTEMAS & PROTOCOLOS -->
@@ -177,19 +196,510 @@
       <div class="section-header">
         <div class="section-header-top">
           <div class="section-tag">01 // ARQUITETURA & TELEMETRIA</div>
-          <button type="button" class="btn-admin-add admin-control" onclick="window.adminController.openCrudModal('skillCategory')">
+          <button type="button" class="btn-admin-add admin-control"
+            onclick="window.adminController.openCrudModal('skillCategory')">
             + Adicionar Camada
           </button>
         </div>
         <h2 class="section-title">Pilha Técnica & Camadas de Protocolo</h2>
         <p class="section-subtitle">
-          Mapeamento estruturado das camadas de conectividade, administração de servidores, segurança da informação e automação.
+          Mapeamento estruturado das camadas de conectividade, administração de servidores, segurança da informação e
+          automação.
         </p>
       </div>
 
-      <!-- Container das Camadas de Arquitetura (Renderizado dinamicamente por app.js) -->
-      <div id="skills-container" class="systems-stack-wrapper">
-        <!-- Inserido dinamicamente via Firestore / data.js -->
+      <!-- Container das Camadas de Arquitetura (Grid Responsivo no Estilo CAS Tecnologia) -->
+      <div id="skills-container" class="systems-stack-wrapper skills-cards-grid">
+
+        <!-- CARD 01: Redes & Conectividade L2/L3 -->
+        <div class="stack-layer-card card-elevated layer-card skill-activity-card">
+          <div class="stack-layer-header layer-header">
+            <div class="layer-meta">
+              <span class="layer-num-badge layer-num">CARD 01</span>
+              <span class="card-fa-icon"><i class="fa-solid fa-network-wired"></i></span>
+              <h3 class="layer-title">Redes &amp; Conectividade L2/L3</h3>
+            </div>
+            <div class="layer-header-right">
+              <div class="card-admin-actions admin-control">
+                <button type="button" class="btn-admin-icon edit-btn"
+                  onclick="window.adminController.openCrudModal('skillCategory', 'networking')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                  </svg> Editar
+                </button>
+                <button type="button" class="btn-admin-icon delete-btn"
+                  onclick="window.adminController.deleteItem('skillCategory', 'networking')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6" />
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                  </svg> Excluir
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="layer-description">Topologias corporativas, comutação, protocolos e simulações.</p>
+          <div class="protocols-grid skills-chips">
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m4.93 4.93 4.24 4.24" />
+                  <path d="m14.83 9.17 4.24-4.24" />
+                  <path d="m14.83 14.83 4.24 4.24" />
+                  <path d="m9.17 14.83-4.24 4.24" />
+                  <circle cx="12" cy="12" r="4" />
+                </svg></span>
+              <span class="protocol-name">TCP/IP &amp; CIDR</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="10" rx="2" />
+                  <circle cx="7" cy="12" r="1" />
+                  <circle cx="12" cy="12" r="1" />
+                  <circle cx="17" cy="12" r="1" />
+                </svg></span>
+              <span class="protocol-name">VLANs (802.1Q)</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" />
+                  <rect x="2" y="14" width="20" height="8" rx="2" />
+                  <line x1="6" y1="6" x2="6.01" y2="6" />
+                  <line x1="6" y1="18" x2="6.01" y2="18" />
+                </svg></span>
+              <span class="protocol-name">Switching &amp; Routing</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg></span>
+              <span class="protocol-name">ACLs</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 2v7.31" />
+                  <path d="M14 9.3V1.99" />
+                  <path d="M8.5 2h7" />
+                  <path d="M14 9.3a6.5 6.5 0 1 1-4 0" />
+                  <path d="M5.52 16h12.96" />
+                </svg></span>
+              <span class="protocol-name">EVE-NG</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m7.5 4.27 9 5.15" />
+                  <path
+                    d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+                  <path d="m3.3 7 8.7 5 8.7-5" />
+                  <path d="M12 22V12" />
+                </svg></span>
+              <span class="protocol-name">Cisco Packet Tracer</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12h20" />
+                  <path d="M20 12v8H4v-8" />
+                  <path d="m4 8 16-4v4" />
+                </svg></span>
+              <span class="protocol-name">Wireshark</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 02: Segurança & Gestão de Acessos (IAM) -->
+        <div class="stack-layer-card card-elevated layer-card skill-activity-card">
+          <div class="stack-layer-header layer-header">
+            <div class="layer-meta">
+              <span class="layer-num-badge layer-num">CARD 02</span>
+              <span class="card-fa-icon"><i class="fa-solid fa-user-shield"></i></span>
+              <h3 class="layer-title">Segurança &amp; Gestão de Acessos (IAM)</h3>
+            </div>
+            <div class="layer-header-right">
+              <div class="card-admin-actions admin-control">
+                <button type="button" class="btn-admin-icon edit-btn"
+                  onclick="window.adminController.openCrudModal('skillCategory', 'cybersecurity')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                  </svg> Editar
+                </button>
+                <button type="button" class="btn-admin-icon delete-btn"
+                  onclick="window.adminController.deleteItem('skillCategory', 'cybersecurity')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6" />
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                  </svg> Excluir
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="layer-description">Controle de privilégios, defesa perimetral e políticas corporativas.</p>
+          <div class="protocols-grid skills-chips">
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg></span>
+              <span class="protocol-name">Active Directory (AD)</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg></span>
+              <span class="protocol-name">IAM &amp; MFA</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg></span>
+              <span class="protocol-name">Firewalls &amp; Regras</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polyline points="9 12 11 14 15 10" />
+                </svg></span>
+              <span class="protocol-name">Hardening de Estações</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg></span>
+              <span class="protocol-name">LGPD</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="7" />
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                </svg></span>
+              <span class="protocol-name">ISO 27001</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 03: Sistemas Operacionais & Virtualização -->
+        <div class="stack-layer-card card-elevated layer-card skill-activity-card">
+          <div class="stack-layer-header layer-header">
+            <div class="layer-meta">
+              <span class="layer-num-badge layer-num">CARD 03</span>
+              <span class="card-fa-icon"><i class="fa-solid fa-server"></i></span>
+              <h3 class="layer-title">Sistemas Operacionais &amp; Virtualização</h3>
+            </div>
+            <div class="layer-header-right">
+              <div class="card-admin-actions admin-control">
+                <button type="button" class="btn-admin-icon edit-btn"
+                  onclick="window.adminController.openCrudModal('skillCategory', 'systems')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                  </svg> Editar
+                </button>
+                <button type="button" class="btn-admin-icon delete-btn"
+                  onclick="window.adminController.deleteItem('skillCategory', 'systems')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6" />
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                  </svg> Excluir
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="layer-description">Sustentação de servidores corporativos, hipervisores e ambientes de nuvem.</p>
+          <div class="protocols-grid skills-chips">
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg></span>
+              <span class="protocol-name">Linux (Debian/Ubuntu/Mint)</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg></span>
+              <span class="protocol-name">Windows Server</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" />
+                  <rect x="2" y="14" width="20" height="8" rx="2" />
+                  <line x1="6" y1="6" x2="6.01" y2="6" />
+                  <line x1="6" y1="18" x2="6.01" y2="18" />
+                </svg></span>
+              <span class="protocol-name">VMware &amp; QEMU</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                </svg></span>
+              <span class="protocol-name">AWS Fundamentals</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                </svg></span>
+              <span class="protocol-name">Suporte N1/N2</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 04: Automação & Ferramentas Operacionais -->
+        <div class="stack-layer-card card-elevated layer-card skill-activity-card">
+          <div class="stack-layer-header layer-header">
+            <div class="layer-meta">
+              <span class="layer-num-badge layer-num">CARD 04</span>
+              <span class="card-fa-icon"><i class="fa-solid fa-terminal"></i></span>
+              <h3 class="layer-title">Automação &amp; Ferramentas Operacionais</h3>
+            </div>
+            <div class="layer-header-right">
+              <div class="card-admin-actions admin-control">
+                <button type="button" class="btn-admin-icon edit-btn"
+                  onclick="window.adminController.openCrudModal('skillCategory', 'automation')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                  </svg> Editar
+                </button>
+                <button type="button" class="btn-admin-icon delete-btn"
+                  onclick="window.adminController.deleteItem('skillCategory', 'automation')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6" />
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                  </svg> Excluir
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="layer-description">Scripts de rotinas técnicas e manipulação de fluxos operacionais.</p>
+          <div class="protocols-grid skills-chips">
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+                </svg></span>
+              <span class="protocol-name">Python</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="4 17 10 11 4 5" />
+                  <line x1="12" y1="19" x2="20" y2="19" />
+                </svg></span>
+              <span class="protocol-name">Bash / Shell CLI</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path
+                    d="M21.7 10.7l-8.4-8.4a2.4 2.4 0 0 0-3.4 0L7.5 4.7 9.8 7a2.5 2.5 0 0 1 3.2 3.2l2.3 2.3a2.5 2.5 0 1 1-1.4 1.4L11.7 11.7v5a2.5 2.5 0 1 1-2 0V11a2.5 2.5 0 0 1-1.3-3.2L6 5.5l-3.7 3.7a2.4 2.4 0 0 0 0 3.4l8.4 8.4a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4z" />
+                </svg></span>
+              <span class="protocol-name">Git &amp; GitHub</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="4 17 10 11 4 5" />
+                  <line x1="12" y1="19" x2="20" y2="19" />
+                </svg></span>
+              <span class="protocol-name">Shell Script</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 05: Telemetria, Redes & Monitoramento (NOC) -->
+        <div class="stack-layer-card card-elevated layer-card skill-activity-card">
+          <div class="stack-layer-header layer-header">
+            <div class="layer-meta">
+              <span class="layer-num-badge layer-num">CARD 05</span>
+              <span class="card-fa-icon"><i class="fa-solid fa-chart-line"></i></span>
+              <h3 class="layer-title">Telemetria, Redes &amp; Monitoramento (NOC)</h3>
+            </div>
+            <div class="layer-header-right">
+              <div class="card-admin-actions admin-control">
+                <button type="button" class="btn-admin-icon edit-btn"
+                  onclick="window.adminController.openCrudModal('skillCategory', 'telemetry')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                  </svg> Editar
+                </button>
+                <button type="button" class="btn-admin-icon delete-btn"
+                  onclick="window.adminController.deleteItem('skillCategory', 'telemetry')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6" />
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                  </svg> Excluir
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="layer-description">Supervisão contínua de ativos, métricas de tráfego e análise de pacotes.</p>
+          <div class="protocols-grid skills-chips">
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg></span>
+              <span class="protocol-name">Zabbix</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m4.93 4.93 4.24 4.24" />
+                  <path d="m14.83 9.17 4.24-4.24" />
+                </svg></span>
+              <span class="protocol-name">SNMP</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg></span>
+              <span class="protocol-name">Syslog</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12h20" />
+                  <path d="M20 12v8H4v-8" />
+                  <path d="m4 8 16-4v4" />
+                </svg></span>
+              <span class="protocol-name">Wireshark</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2v2" />
+                  <path d="M12 20v2" />
+                  <path d="m4.93 4.93 1.41 1.41" />
+                  <path d="m17.66 17.66 1.41 1.41" />
+                </svg></span>
+              <span class="protocol-name">ICMP / Telemetria</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10" />
+                  <line x1="12" y1="20" x2="12" y2="4" />
+                  <line x1="6" y1="20" x2="6" y2="14" />
+                </svg></span>
+              <span class="protocol-name">Diagnóstico de Tráfego</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 06: Cloud, Dados & Tecnologias Aplicadas -->
+        <div class="stack-layer-card card-elevated layer-card skill-activity-card">
+          <div class="stack-layer-header layer-header">
+            <div class="layer-meta">
+              <span class="layer-num-badge layer-num">CARD 06</span>
+              <span class="card-fa-icon"><i class="fa-solid fa-cloud"></i></span>
+              <h3 class="layer-title">Cloud, Dados &amp; Tecnologias Aplicadas</h3>
+            </div>
+            <div class="layer-header-right">
+              <div class="card-admin-actions admin-control">
+                <button type="button" class="btn-admin-icon edit-btn"
+                  onclick="window.adminController.openCrudModal('skillCategory', 'cloud_data')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                  </svg> Editar
+                </button>
+                <button type="button" class="btn-admin-icon delete-btn"
+                  onclick="window.adminController.deleteItem('skillCategory', 'cloud_data')">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6" />
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                  </svg> Excluir
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="layer-description">Repositórios em nuvem, consultas estruturadas e ferramentas modernas.</p>
+          <div class="protocols-grid skills-chips">
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                </svg></span>
+              <span class="protocol-name">AWS Cloud</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2c-4 0-8 3.5-8 8.5 0 3 1.5 5.5 3 7l5 4.5 5-4.5c1.5-1.5 3-4 3-7 0-5-4-8.5-8-8.5z" />
+                </svg></span>
+              <span class="protocol-name">Firebase</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg></span>
+              <span class="protocol-name">SQL Relacional</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 22 22 22" />
+                </svg></span>
+              <span class="protocol-name">Streamlit</span>
+            </div>
+            <div class="protocol-chip">
+              <span class="protocol-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z" />
+                </svg></span>
+              <span class="protocol-name">IA Generativa &amp; Prompts</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -198,13 +708,15 @@
       <div class="section-header">
         <div class="section-header-top">
           <div class="section-tag">02 // HISTÓRICO PRÁTICO</div>
-          <button type="button" class="btn-admin-add admin-control" onclick="window.adminController.openCrudModal('experience')">
+          <button type="button" class="btn-admin-add admin-control"
+            onclick="window.adminController.openCrudModal('experience')">
             + Adicionar Experiência
           </button>
         </div>
         <h2 class="section-title">Experiência Profissional</h2>
         <p class="section-subtitle">
-          Atuação real em suporte técnico, sustentação de infraestrutura, gestão de identidades (IAM) e rotinas operacionais.
+          Atuação real em suporte técnico, sustentação de infraestrutura, gestão de identidades (IAM) e rotinas
+          operacionais.
         </p>
       </div>
 
@@ -219,7 +731,8 @@
       <div class="section-header">
         <div class="section-header-top">
           <div class="section-tag">03 // PROJETOS & LABS</div>
-          <button type="button" class="btn-admin-add admin-control" onclick="window.adminController.openCrudModal('project')">
+          <button type="button" class="btn-admin-add admin-control"
+            onclick="window.adminController.openCrudModal('project')">
             + Adicionar Projeto
           </button>
         </div>
@@ -240,13 +753,15 @@
       <div class="section-header">
         <div class="section-header-top">
           <div class="section-tag">04 // EDUCAÇÃO & DESENVOLVIMENTO</div>
-          <button type="button" class="btn-admin-add admin-control" onclick="window.adminController.openCrudModal('education')">
+          <button type="button" class="btn-admin-add admin-control"
+            onclick="window.adminController.openCrudModal('education')">
             + Adicionar Formação
           </button>
         </div>
         <h2 class="section-title">Formação Acadêmica & Certificações</h2>
         <p class="section-subtitle">
-          Trilha de aprendizado contínuo, graduação superior e qualificações técnicas especializadas organizadas por domínio de conhecimento.
+          Trilha de aprendizado contínuo, graduação superior e qualificações técnicas especializadas organizadas por
+          domínio de conhecimento.
         </p>
       </div>
 
@@ -261,10 +776,15 @@
         <div class="languages-bento-card card-elevated">
           <div class="card-kicker-row" style="justify-content: space-between;">
             <span class="card-kicker">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
               Idiomas & Comunicação
             </span>
-            <button type="button" class="btn-admin-icon admin-control" onclick="window.adminController.openCrudModal('language')">
+            <button type="button" class="btn-admin-icon admin-control"
+              onclick="window.adminController.openCrudModal('language')">
               + Novo
             </button>
           </div>
@@ -280,10 +800,14 @@
         <div class="certifications-header-row">
           <div class="cert-title-group">
             <h3 class="subsection-title">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
               Qualificações & Cursos Técnicos
             </h3>
-            <button type="button" class="btn-admin-add admin-control" onclick="window.adminController.openCrudModal('certification')">
+            <button type="button" class="btn-admin-add admin-control"
+              onclick="window.adminController.openCrudModal('certification')">
               + Adicionar Curso
             </button>
           </div>
@@ -319,7 +843,10 @@
         <div class="contact-action-card card-elevated">
           <div class="contact-channel-header">
             <span class="contact-channel-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
             </span>
             <div>
               <h3 class="contact-channel-title">E-mail Profissional</h3>
@@ -328,11 +855,17 @@
           </div>
           <div class="contact-action-buttons">
             <a href="mailto:emily09.e.y@gmail.com" class="btn btn-primary">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2 11 13" />
+                <path d="m22 2-7 20-4-9-9-4 20-7z" />
+              </svg>
               Enviar Mensagem
             </a>
             <button type="button" id="btn-copy-email" class="btn btn-secondary" aria-label="Copiar e-mail">
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>
               Copiar Endereço
             </button>
           </div>
@@ -342,7 +875,10 @@
         <div class="contact-action-card card-elevated">
           <div class="contact-channel-header">
             <span class="contact-channel-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.3a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z"/></svg>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.3a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z" />
+              </svg>
             </span>
             <div>
               <h3 class="contact-channel-title">LinkedIn</h3>
@@ -350,9 +886,14 @@
             </div>
           </div>
           <div class="contact-action-buttons">
-            <a href="https://www.linkedin.com/in/emilyangeloo/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <a href="https://www.linkedin.com/in/emilyangeloo/" target="_blank" rel="noopener noreferrer"
+              class="btn btn-primary">
               Conectar no LinkedIn
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
             </a>
           </div>
         </div>
@@ -361,7 +902,10 @@
         <div class="contact-action-card card-elevated">
           <div class="contact-channel-header">
             <span class="contact-channel-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
             </span>
             <div>
               <h3 class="contact-channel-title">GitHub</h3>
@@ -371,7 +915,11 @@
           <div class="contact-action-buttons">
             <a href="https://github.com/emilyangelo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
               Explorar Repositórios
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
             </a>
           </div>
         </div>
@@ -389,12 +937,14 @@
 
       <div class="footer-right">
         <span class="footer-telemetry-tag">status: 200 OK | protocol: https</span>
-        
+
         <!-- MICRO-CADEADO OCULTO (Admin Gateway Easter Egg) -->
-        <button id="admin-lock-btn" class="admin-hidden-lock-btn" type="button" aria-label="Security Status Key" title="System Security Node">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        <button id="admin-lock-btn" class="admin-hidden-lock-btn" type="button" aria-label="Security Status Key"
+          title="System Security Node">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
           </svg>
         </button>
       </div>
@@ -407,7 +957,10 @@
       <div class="modal-header">
         <div class="modal-title-group">
           <span class="modal-lock-icon">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
           </span>
           <h3 id="auth-modal-title" class="modal-title">Autenticação Administrativa</h3>
         </div>
@@ -415,15 +968,17 @@
       </div>
       <form id="auth-form" class="modal-body">
         <p class="modal-help-text">Insira as credenciais de administrador para gerenciar o portfólio via Firebase.</p>
-        
+
         <div class="form-group">
           <label class="form-label" for="auth-email">E-mail</label>
-          <input type="email" id="auth-email" class="form-input" required autocomplete="username" placeholder="emily09.e.y@gmail.com">
+          <input type="email" id="auth-email" class="form-input" required autocomplete="username"
+            placeholder="emily09.e.y@gmail.com">
         </div>
 
         <div class="form-group">
           <label class="form-label" for="auth-password">Senha</label>
-          <input type="password" id="auth-password" class="form-input" required autocomplete="current-password" placeholder="••••••••">
+          <input type="password" id="auth-password" class="form-input" required autocomplete="current-password"
+            placeholder="••••••••">
         </div>
 
         <div id="auth-error-msg" class="form-error-msg" aria-live="assertive"></div>
@@ -447,12 +1002,73 @@
           <!-- Campos inseridos dinamicamente por admin.js -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="window.adminController.closeCrudModal()">Cancelar</button>
+          <button type="button" class="btn btn-secondary"
+            onclick="window.adminController.closeCrudModal()">Cancelar</button>
           <button type="submit" class="btn btn-primary">Salvar Alterações</button>
         </div>
       </form>
     </div>
   </div>
+
+  <!-- WIDGET FLUTUANTE DE MICRO-TERMINAL INTERATIVO -->
+  <div id="terminal-floating-widget" class="terminal-floating-widget hidden" role="region"
+    aria-label="Micro-Terminal Interativo" aria-hidden="true">
+    <div id="hero-terminal" class="terminal-container">
+      <!-- Barra Superior do Terminal -->
+      <div class="terminal-titlebar">
+        <div class="terminal-controls">
+          <button type="button" class="terminal-btn btn-close" aria-label="Fechar terminal" title="Fechar"></button>
+          <button type="button" class="terminal-btn btn-minimize" aria-label="Minimizar terminal"
+            title="Minimizar"></button>
+          <span class="terminal-btn btn-maximize" title="Maximizar"></span>
+        </div>
+        <div class="terminal-title">
+          <span class="terminal-title-text">emily@workstation:~ (bash)</span>
+        </div>
+        <div class="terminal-session-status">
+          <span id="terminal-status-dot" class="status-dot"></span>
+          <button type="button" id="terminal-close-x-btn" class="terminal-btn-x" aria-label="Fechar gaveta do terminal"
+            title="Fechar (X)">✕</button>
+        </div>
+      </div>
+
+      <!-- Área de Saída de Linhas -->
+      <div id="terminal-output" class="terminal-body" aria-live="polite">
+        <!-- Preenchido dinamicamente por terminal.js -->
+      </div>
+
+      <!-- Linha de Comando Interativa -->
+      <form id="terminal-form" class="terminal-input-row">
+        <span class="terminal-prompt">emily@workstation:~$</span>
+        <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false"
+          placeholder="iniciando terminal...">
+      </form>
+    </div>
+
+    <!-- Botões de Atalho Rápido para Comandos -->
+    <div id="terminal-chips" class="terminal-chips-row">
+      <button type="button" class="terminal-chip" data-cmd="whoami">&gt; whoami</button>
+      <button type="button" class="terminal-chip" data-cmd="skills">&gt; skills</button>
+      <button type="button" class="terminal-chip" data-cmd="experience">&gt; experience</button>
+      <button type="button" class="terminal-chip" data-cmd="projects">&gt; projects</button>
+      <button type="button" class="terminal-chip" data-cmd="status">&gt; status</button>
+      <button type="button" class="terminal-chip chip-clear" data-cmd="clear">&gt; clear</button>
+    </div>
+  </div>
+
+  <!-- BOTÃO DE GATILHO FLUTUANTE (CHAMATIVO COM TEXTO E STATUS ONLINE) -->
+  <button id="terminal-widget-toggle" class="terminal-widget-toggle" type="button"
+    aria-label="Abrir Terminal Interativo CLI" aria-expanded="false" title="Abrir Terminal Interativo CLI">
+    <span class="terminal-toggle-status-led" aria-hidden="true"></span>
+    <span class="terminal-toggle-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 17 10 11 4 5"></polyline>
+        <line x1="12" y1="19" x2="20" y2="19"></line>
+      </svg>
+    </span>
+    <span class="terminal-toggle-text">Terminal Interativo CLI</span>
+  </button>
 
   <!-- CONTAINER DE NOTIFICAÇÕES TOAST -->
   <div id="toast-container" class="toast-container" aria-live="polite"></div>
@@ -466,4 +1082,5 @@
   <script type="module" src="js/app.js"></script>
 
 </body>
+
 </html>

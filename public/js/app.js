@@ -64,60 +64,68 @@
     externalLink: `<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`,
     edit: `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`,
     trash: `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>`,
-    plus: `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`
+    plus: `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
+    code: `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`
   };
 
   function resolveSkillIcon(skillName, defaultIcon = "network") {
     if (!skillName) return ICONS[defaultIcon] || ICONS.network;
     const s = String(skillName).toLowerCase().trim();
 
-    if (s.includes("python")) return ICONS.python;
-    if (s.includes("git")) return ICONS.git;
-    if (s.includes("html") || s.includes("css")) return ICONS.html;
-    if (s.includes("javascript") || s.includes("js")) return ICONS.js;
-    if (s.includes("algoritmo")) return ICONS.algo;
-    if (s.includes("lógica") || s.includes("logica")) return ICONS.logic;
-    if (s.includes("prompt") || s.includes("ia") || s.includes("ai") || s.includes("inteligência") || s.includes("inteligencia")) return ICONS.ai;
-    if (s.includes("sql") || s.includes("banco de dados") || s.includes("database")) return ICONS.sql;
-    if (s.includes("power bi") || s.includes("powerbi")) return ICONS.powerbi;
-    if (s.includes("excel")) return ICONS.excel;
-    if (s.includes("análise") || s.includes("analise") || s.includes("analytics")) return ICONS.analytics;
-    if (s.includes("tcp") || s.includes("ip") || s.includes("protocolo")) return ICONS.protocol;
-    if (s.includes("subnet") || s.includes("cidr") || s.includes("sub-rede")) return ICONS.subnet;
-    if (s.includes("dns") || s.includes("dhcp")) return ICONS.dns;
-    if (s.includes("vlan")) return ICONS.vlan;
-    if (s.includes("switch")) return ICONS.switch;
-    if (s.includes("router") || s.includes("roteamento") || s.includes("routing")) return ICONS.router;
-    if (s.includes("topologia")) return ICONS.topology;
-    if (s.includes("eve-ng") || s.includes("gns3") || s.includes("lab")) return ICONS.lab;
-    if (s.includes("packet tracer") || s.includes("packet")) return ICONS.packet;
-    if (s.includes("wireshark")) return ICONS.wireshark;
-    if (s.includes("cabeamento") || s.includes("cable")) return ICONS.cable;
-    if (s.includes("iam") || s.includes("identidade") || s.includes("acesso")) return ICONS.iam;
-    if (s.includes("permissão") || s.includes("permissao") || s.includes("privilégio")) return ICONS.permission;
-    if (s.includes("active directory") || s.includes("ad")) return ICONS.ad;
-    if (s.includes("cyber") || s.includes("cibersegurança") || s.includes("segurança")) return ICONS.cyber;
-    if (s.includes("firewall")) return ICONS.firewall;
-    if (s.includes("acl")) return ICONS.acl;
-    if (s.includes("hardening")) return ICONS.hardening;
-    if (s.includes("lgpd") || s.includes("privacidade")) return ICONS.lgpd;
-    if (s.includes("iso")) return ICONS.iso;
-    if (s.includes("mfa") || s.includes("senha")) return ICONS.mfa;
-    if (s.includes("windows server") || s.includes("winserver")) return ICONS.winserver;
-    if (s.includes("windows")) return ICONS.windows;
-    if (s.includes("linux") || s.includes("debian") || s.includes("ubuntu")) return ICONS.linux;
-    if (s.includes("terminal") || s.includes("cli") || s.includes("bash")) return ICONS.cli;
-    if (s.includes("impressora") || s.includes("printer")) return ICONS.printer;
-    if (s.includes("inventário") || s.includes("inventario") || s.includes("ativo")) return ICONS.inventory;
-    if (s.includes("suporte") || s.includes("helpdesk")) return ICONS.support;
-    if (s.includes("hardware") || s.includes("manutenção") || s.includes("manutencao")) return ICONS.hardware;
-    if (s.includes("diagnóstico") || s.includes("diagnostico")) return ICONS.diagnostic;
-    if (s.includes("virtualbox") || s.includes("vbox")) return ICONS.vbox;
-    if (s.includes("vmware")) return ICONS.vmware;
-    if (s.includes("qemu")) return ICONS.qemu;
-    if (s.includes("aws") || s.includes("cloud")) return ICONS.aws;
+    let icon = null;
+    if (s.includes("python")) icon = ICONS.python;
+    else if (s.includes("git")) icon = ICONS.git;
+    else if (s.includes("automação") || s.includes("automacao") || s.includes("script")) icon = ICONS.cli;
+    else if (s.includes("html") || s.includes("css")) icon = ICONS.html;
+    else if (s.includes("javascript") || s.includes("js")) icon = ICONS.js;
+    else if (s.includes("algoritmo")) icon = ICONS.algo;
+    else if (s.includes("lógica") || s.includes("logica")) icon = ICONS.logic;
+    else if (s.includes("prompt") || s.includes("ia") || s.includes("ai") || s.includes("inteligência") || s.includes("inteligencia")) icon = ICONS.ai;
+    else if (s.includes("sql") || s.includes("banco de dados") || s.includes("database")) icon = ICONS.sql;
+    else if (s.includes("power bi") || s.includes("powerbi")) icon = ICONS.powerbi;
+    else if (s.includes("excel")) icon = ICONS.excel;
+    else if (s.includes("análise") || s.includes("analise") || s.includes("analytics")) icon = ICONS.analytics;
+    else if (s.includes("tcp") || s.includes("ip") || s.includes("protocolo")) icon = ICONS.protocol;
+    else if (s.includes("subnet") || s.includes("cidr") || s.includes("sub-rede")) icon = ICONS.subnet;
+    else if (s.includes("dns") || s.includes("dhcp")) icon = ICONS.dns;
+    else if (s.includes("vlan")) icon = ICONS.vlan;
+    else if (s.includes("switch")) icon = ICONS.switch;
+    else if (s.includes("router") || s.includes("roteamento") || s.includes("routing")) icon = ICONS.router;
+    else if (s.includes("topologia")) icon = ICONS.topology;
+    else if (s.includes("eve-ng") || s.includes("gns3") || s.includes("lab")) icon = ICONS.lab;
+    else if (s.includes("packet tracer") || s.includes("packet")) icon = ICONS.packet;
+    else if (s.includes("wireshark")) icon = ICONS.wireshark;
+    else if (s.includes("cabeamento") || s.includes("cable")) icon = ICONS.cable;
+    else if (s.includes("iam") || s.includes("identidade") || s.includes("acesso")) icon = ICONS.iam;
+    else if (s.includes("permissão") || s.includes("permissao") || s.includes("privilégio")) icon = ICONS.permission;
+    else if (s.includes("active directory") || s.includes("ad")) icon = ICONS.ad;
+    else if (s.includes("cyber") || s.includes("cibersegurança") || s.includes("segurança")) icon = ICONS.cyber;
+    else if (s.includes("firewall")) icon = ICONS.firewall;
+    else if (s.includes("acl")) icon = ICONS.acl;
+    else if (s.includes("hardening")) icon = ICONS.hardening;
+    else if (s.includes("lgpd") || s.includes("privacidade")) icon = ICONS.lgpd;
+    else if (s.includes("iso")) icon = ICONS.iso;
+    else if (s.includes("mfa") || s.includes("senha")) icon = ICONS.mfa;
+    else if (s.includes("windows server") || s.includes("winserver")) icon = ICONS.winserver;
+    else if (s.includes("windows")) icon = ICONS.windows;
+    else if (s.includes("linux") || s.includes("debian") || s.includes("ubuntu")) icon = ICONS.linux;
+    else if (s.includes("terminal") || s.includes("cli") || s.includes("bash")) icon = ICONS.cli;
+    else if (s.includes("impressora") || s.includes("printer")) icon = ICONS.printer;
+    else if (s.includes("inventário") || s.includes("inventario") || s.includes("ativo")) icon = ICONS.inventory;
+    else if (s.includes("suporte") || s.includes("helpdesk")) icon = ICONS.support;
+    else if (s.includes("hardware") || s.includes("manutenção") || s.includes("manutencao")) icon = ICONS.hardware;
+    else if (s.includes("diagnóstico") || s.includes("diagnostico")) icon = ICONS.diagnostic;
+    else if (s.includes("virtualbox") || s.includes("vbox")) icon = ICONS.vbox;
+    else if (s.includes("vmware")) icon = ICONS.vmware;
+    else if (s.includes("qemu")) icon = ICONS.qemu;
+    else if (s.includes("aws") || s.includes("cloud")) icon = ICONS.aws;
+    else if (s.includes("firebase")) icon = ICONS.sql;
+    else if (s.includes("streamlit")) icon = ICONS.code || ICONS.network;
+    else if (s.includes("zabbix") || s.includes("monitor")) icon = ICONS.diagnostic;
+    else if (s.includes("snmp") || s.includes("syslog") || s.includes("icmp") || s.includes("telemetria")) icon = ICONS.protocol;
+    else if (s.includes("tráfego") || s.includes("trafego")) icon = ICONS.router;
 
-    return ICONS[defaultIcon] || ICONS.network;
+    return icon || ICONS[defaultIcon] || ICONS.network;
   }
 
   function getIcon(key) {
@@ -155,12 +163,23 @@
     const container = document.getElementById("skills-container") || document.getElementById("skills-stack-container");
     if (!container) return;
 
-    const categories = await window.portfolioDataService.getSkillsCategories();
+    const rawCategories = await window.portfolioDataService.getSkillsCategories();
+    const allowedIds = ["networking", "cybersecurity", "systems", "automation", "telemetry", "cloud_data"];
+    const categories = rawCategories
+      .filter((cat) => {
+        const name = (cat.name || "").toLowerCase();
+        const id = (cat.id || "").toLowerCase();
+        return !name.includes("programação") && !name.includes("programacao") && allowedIds.includes(id);
+      })
+      .slice(0, 6);
+
     container.innerHTML = "";
 
     categories.forEach((cat, index) => {
       const layerCard = document.createElement("div");
-      layerCard.className = "stack-layer-card card-elevated";
+      layerCard.className = "stack-layer-card card-elevated layer-card skill-activity-card";
+
+      const faIconClass = cat.faIcon || (index === 0 ? "fa-network-wired" : index === 1 ? "fa-user-shield" : index === 2 ? "fa-server" : index === 3 ? "fa-terminal" : index === 4 ? "fa-chart-line" : "fa-cloud");
 
       const skillsList = Array.isArray(cat.skills) ? cat.skills : [];
       const pillsHtml = skillsList
@@ -180,13 +199,13 @@
         .join("");
 
       layerCard.innerHTML = `
-        <div class="stack-layer-header">
+        <div class="stack-layer-header layer-header">
           <div class="layer-meta">
-            <span class="layer-num-badge">LAYER 0${index + 1}</span>
+            <span class="layer-num-badge layer-num">CARD 0${index + 1}</span>
+            <span class="card-fa-icon"><i class="fa-solid ${faIconClass}"></i></span>
             <h3 class="layer-title">${escapeHtml(cat.name)}</h3>
           </div>
           <div class="layer-header-right">
-            <span class="layer-status-tag">● Ativo / Produção</span>
             <div class="card-admin-actions admin-control">
               <button type="button" class="btn-admin-icon edit-btn" onclick="window.adminController.openCrudModal('skillCategory', '${cat.id}')">
                 ${ICONS.edit} Editar
@@ -198,7 +217,7 @@
           </div>
         </div>
         <p class="layer-description">${escapeHtml(cat.description)}</p>
-        <div class="protocols-grid">
+        <div class="protocols-grid skills-chips">
           ${pillsHtml}
         </div>
       `;

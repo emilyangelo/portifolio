@@ -61,6 +61,102 @@ html, body {
   }
 }
 
+/* Tablets (600px a 992px): Grade de Cards em 2 Colunas */
+@media (max-width: 992px) {
+  .systems-stack-wrapper,
+  .skills-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem;
+  }
+}
+
+/* Responsividade Específica (<= 900px): Hero em Coluna, Foto Centralizada & Terminal Flutuante */
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .hero-avatar-wrapper {
+    order: -1;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .profile-avatar {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-focus-tags {
+    justify-content: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-objective {
+    border-left: none;
+    border-top: 2px solid var(--border-highlight);
+    padding: 0.75rem 0 0;
+    text-align: center;
+  }
+
+  .terminal-floating-widget {
+    bottom: 16px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-width: calc(100vw - 24px);
+    box-sizing: border-box;
+  }
+
+  .terminal-floating-widget .terminal-container {
+    height: 360px;
+  }
+
+  .terminal-floating-widget .terminal-chips-row {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem 0.65rem;
+    scrollbar-width: none;
+  }
+
+  .terminal-floating-widget .terminal-chips-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .terminal-floating-widget .terminal-chip {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .terminal-widget-toggle {
+    bottom: 16px;
+    right: 16px;
+    max-width: calc(100vw - 32px);
+    padding: 9px 15px;
+    font-size: 0.8rem;
+    gap: 7px;
+  }
+
+  .terminal-toggle-text {
+    font-size: 0.8rem;
+  }
+}
+
 /* Tablets Portrait & Telas Médias (<= 768px) */
 @media (max-width: 768px) {
   .site-header {
@@ -233,6 +329,15 @@ html, body {
   .footer-right {
     width: 100%;
     justify-content: space-between;
+  }
+}
+
+/* Celular (< 600px): Grade de Cards em 1 Coluna */
+@media (max-width: 600px) {
+  .systems-stack-wrapper,
+  .skills-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 

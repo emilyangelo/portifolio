@@ -329,12 +329,15 @@ ul, ol {
    ========================================================================== */
 
 .hero-section {
-  padding: 4rem 1.5rem 3.5rem;
+  padding: 3.5rem 1.5rem 1.5rem;
   max-width: 1300px;
   margin: 0 auto;
-  min-height: calc(100vh - 64px);
+  min-height: 76vh;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .hero-container {
@@ -516,7 +519,139 @@ ul, ol {
 }
 
 /* ==========================================================================
-   MICRO-TERMINAL INTERATIVO
+   FOTO DE PERFIL / AVATAR DA HERO
+   ========================================================================== */
+
+.hero-avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.profile-avatar-frame {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 6px;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.25) 0%, rgba(2, 132, 199, 0.12) 60%, transparent 100%);
+  box-shadow: 0 0 30px rgba(0, 210, 255, 0.25), 0 16px 36px rgba(0, 0, 0, 0.7);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.profile-avatar-frame:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 40px rgba(0, 210, 255, 0.4), 0 20px 45px rgba(0, 0, 0, 0.85);
+}
+
+.profile-avatar-glow {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(0, 210, 255, 0.35) 90deg, transparent 180deg, rgba(16, 185, 129, 0.3) 270deg, transparent 360deg);
+  animation: avatar-rotate 12s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes avatar-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.profile-avatar {
+  position: relative;
+  z-index: 1;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 3px solid #00d2ff;
+  background-color: #0F141C;
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.35), inset 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.profile-avatar-badge {
+  position: absolute;
+  z-index: 2;
+  bottom: 14px;
+  right: 18px;
+  background: rgba(8, 12, 16, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+/* Indicador de Rolagem Discreto (Scroll Indicator) */
+.hero-scroll-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 1.5rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+  animation: scroll-indicator-bounce 2.2s infinite ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hero-scroll-indicator:hover {
+  color: #00d2ff;
+}
+
+.hero-scroll-indicator:hover .scroll-indicator-chevron {
+  color: #00d2ff;
+  transform: translateY(3px);
+}
+
+.scroll-indicator-text {
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.scroll-indicator-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+@keyframes scroll-indicator-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  40% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(3px);
+    opacity: 0.85;
+  }
+}
+
+/* ==========================================================================
+   MICRO-TERMINAL INTERATIVO & WIDGET FLUTUANTE
    ========================================================================== */
 
 .hero-terminal-wrapper {
@@ -524,6 +659,112 @@ ul, ol {
   flex-direction: column;
   gap: 0.75rem;
   width: 100%;
+}
+
+.terminal-floating-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 480px;
+  max-width: calc(100vw - 32px);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s;
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.terminal-floating-widget.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.96);
+  pointer-events: none;
+}
+
+.terminal-floating-widget .terminal-container {
+  height: 380px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 210, 255, 0.22);
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  backdrop-filter: blur(14px);
+  background-color: rgba(8, 12, 16, 0.96);
+}
+
+.terminal-floating-widget .terminal-chips-row {
+  background: rgba(15, 20, 28, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Botão Chamativo de Abertura do Terminal */
+.terminal-widget-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9990;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 20px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #00d2ff 0%, #0284c7 100%);
+  color: #040d1a;
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 210, 255, 0.45);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.terminal-widget-toggle:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 210, 255, 0.65);
+  background: linear-gradient(135deg, #38e1ff 0%, #0369a1 100%);
+  color: #000000;
+}
+
+.terminal-widget-toggle:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.terminal-toggle-status-led {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  flex-shrink: 0;
+  animation: terminal-led-pulse 2s infinite ease-in-out;
+}
+
+@keyframes terminal-led-pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.terminal-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #040d1a;
+  flex-shrink: 0;
+}
+
+.terminal-toggle-text {
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #040d1a;
+  white-space: nowrap;
 }
 
 .terminal-container {
@@ -559,19 +800,35 @@ ul, ol {
 }
 
 .terminal-btn {
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
-.btn-close { background-color: #EF4444; opacity: 0.7; }
-.btn-minimize { background-color: #F59E0B; opacity: 0.7; }
-.btn-maximize { background-color: #10B981; opacity: 0.7; }
+.terminal-btn:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.btn-close { background-color: #EF4444; opacity: 0.85; }
+.btn-minimize { background-color: #F59E0B; opacity: 0.85; }
+.btn-maximize { background-color: #10B981; opacity: 0.85; }
 
 .terminal-title {
   font-size: 0.75rem;
   color: var(--text-muted);
   letter-spacing: 0.02em;
+}
+
+.terminal-session-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .terminal-session-status .status-dot {
@@ -580,6 +837,28 @@ ul, ol {
   height: 6px;
   border-radius: 50%;
   background-color: var(--color-green);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.terminal-btn-x {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  line-height: 1;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal-btn-x:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
 }
 
 .terminal-body {
@@ -752,77 +1031,111 @@ ul, ol {
    SEÇÃO 01: ARQUITETURA DE SISTEMAS & PILHA DE PROTOCOLOS (NOC STACK)
    ========================================================================== */
 
-.systems-stack-wrapper {
-  display: flex;
-  flex-direction: column;
+.systems-stack-wrapper,
+.skills-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 
-.stack-layer-card {
-  padding: 1.75rem;
+.skill-activity-card {
+  background-color: #080C11;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
   transition: all var(--transition-fast);
 }
 
-.stack-layer-card:hover {
-  border-color: var(--border-highlight);
-  background-color: var(--bg-surface-elevated);
+.skill-activity-card:hover {
+  border-color: rgba(0, 210, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(0, 210, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-.stack-layer-header {
+.skill-activity-card .layer-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
 }
 
-.layer-meta {
+.skill-activity-card .layer-meta {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   flex-wrap: wrap;
 }
 
-.layer-num-badge {
+.skill-activity-card .card-fa-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #00d2ff;
+  font-size: 1.15rem;
+}
+
+.skill-activity-card .layer-num-badge {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--color-blue-light);
-  background-color: rgba(2, 132, 199, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #00d2ff;
+  background-color: rgba(0, 210, 255, 0.1);
+  border: 1px solid rgba(0, 210, 255, 0.25);
   padding: 0.2rem 0.55rem;
   border-radius: var(--radius-sm);
   letter-spacing: 0.05em;
 }
 
-.layer-title {
-  font-size: 1.15rem;
+.skill-activity-card .layer-title {
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-primary);
+  line-height: 1.35;
 }
 
-.layer-status-tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--color-green-light);
-  background-color: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-full);
-}
-
-.layer-description {
-  font-size: 0.88rem;
+.skill-activity-card .layer-description {
+  font-size: 0.84rem;
   color: var(--text-secondary);
   line-height: 1.5;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.1rem;
 }
 
-.protocols-grid {
+.skill-activity-card .protocols-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.45rem;
+  margin-top: auto;
+}
+
+.skill-activity-card .protocol-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  background-color: #080C11;
+  border: 1px solid var(--border-subtle);
+  padding: 0.32rem 0.62rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.skill-activity-card .protocol-chip:hover {
+  border-color: rgba(0, 210, 255, 0.4);
+  color: #FFFFFF;
+  background-color: rgba(0, 210, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+.skill-activity-card .protocol-chip .protocol-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #00d2ff;
 }
 
 .protocol-chip {

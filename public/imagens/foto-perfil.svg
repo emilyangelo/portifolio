@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#0B0F19"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="avatarSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <rect width="300" height="300" rx="150" fill="url(#bgGrad)"/>
+  
+  <!-- Outer Tech Rings -->
+  <circle cx="150" cy="150" r="144" fill="none" stroke="url(#neonGlow)" stroke-width="2" stroke-dasharray="8 6" opacity="0.6"/>
+  <circle cx="150" cy="150" r="138" fill="none" stroke="#00E5FF" stroke-width="1" opacity="0.25"/>
+
+  <!-- Tech Grid Silhouette Elements -->
+  <path d="M 50 150 Q 150 120 250 150" fill="none" stroke="#00E5FF" stroke-width="1" opacity="0.15"/>
+  <path d="M 70 200 Q 150 170 230 200" fill="none" stroke="#0284C7" stroke-width="1" opacity="0.15"/>
+
+  <!-- Female IT Profile Avatar Icon Silhouette -->
+  <!-- Shoulders / Torso -->
+  <path d="M 70 260 C 70 215, 110 195, 150 195 C 190 195, 230 215, 230 260 Z" fill="#1E293B" stroke="url(#neonGlow)" stroke-width="2"/>
+  
+  <!-- Blazer / Collar Lapel -->
+  <path d="M 125 210 L 150 255 L 175 210" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Neck -->
+  <rect x="138" y="155" width="24" height="45" rx="6" fill="#334155"/>
+  
+  <!-- Head Silhouette -->
+  <ellipse cx="150" cy="125" rx="42" ry="48" fill="#1E293B" stroke="url(#neonGlow)" stroke-width="2"/>
+  
+  <!-- Hair Styling (Long/Medium hair framing face) -->
+  <path d="M 108 120 C 105 85, 130 65, 150 65 C 170 65, 195 85, 192 120 C 190 155, 196 185, 186 210 C 180 195, 178 175, 178 150 C 178 115, 170 95, 150 95 C 130 95, 122 115, 122 150 C 122 175, 120 195, 114 210 C 104 185, 110 155, 108 120 Z" fill="#38BDF8" opacity="0.85"/>
+  
+  <!-- Subtle Glasses / Tech Eyewear -->
+  <rect x="122" y="118" width="22" height="15" rx="3" fill="none" stroke="#00E5FF" stroke-width="2"/>
+  <rect x="156" y="118" width="22" height="15" rx="3" fill="none" stroke="#00E5FF" stroke-width="2"/>
+  <line x1="144" y1="125" x2="156" y2="125" stroke="#00E5FF" stroke-width="2"/>
+  
+  <!-- Monogram Initials Tag EA -->
+  <rect x="120" y="260" width="60" height="24" rx="12" fill="#0F172A" stroke="#00E5FF" stroke-width="1.5"/>
+  <text x="150" y="276" fill="#00E5FF" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" text-anchor="middle">&gt; EA_</text>
+</svg>

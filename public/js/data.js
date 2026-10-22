@@ -50,97 +50,89 @@ const INITIAL_PORTFOLIO_DATA = {
   skillsCategories: [
     {
       id: "networking",
-      name: "Networking & Infrastructure",
-      description: "Topologia, protocolos de comunicação, switching, roteamento e simulações de redes.",
+      name: "Redes & Conectividade L2/L3",
+      description: "Topologias corporativas, comutação, protocolos e simulações.",
       icon: "network",
+      faIcon: "fa-network-wired",
       skills: [
-        { name: "Redes de Computadores", icon: "network" },
-        { name: "TCP/IP & Endereçamento", icon: "protocol" },
-        { name: "Sub-redes & CIDR", icon: "subnet" },
-        { name: "DNS & DHCP", icon: "dns" },
-        { name: "VLANs & 802.1Q", icon: "vlan" },
+        { name: "TCP/IP & CIDR", icon: "protocol" },
+        { name: "VLANs (802.1Q)", icon: "vlan" },
         { name: "Switching & Routing", icon: "router" },
-        { name: "Topologias de Rede", icon: "topology" },
-        { name: "EVE-NG & GNS3", icon: "lab" },
+        { name: "ACLs", icon: "acl" },
+        { name: "EVE-NG", icon: "lab" },
         { name: "Cisco Packet Tracer", icon: "packet" },
-        { name: "Wireshark", icon: "wireshark" },
-        { name: "Cabeamento Estruturado", icon: "cable" }
-      ]
-    },
-    {
-      id: "systems",
-      name: "Sistemas & Suporte Técnico",
-      description: "Sustentação de hardware, sistemas operacionais corporativos e suporte técnico a usuários.",
-      icon: "server",
-      skills: [
-        { name: "Suporte Técnico", icon: "support" },
-        { name: "Helpdesk & Service Desk", icon: "helpdesk" },
-        { name: "Hardware & Manutenção", icon: "hardware" },
-        { name: "Montagem & Diagnóstico", icon: "diagnostic" },
-        { name: "Windows 10 / 11", icon: "windows" },
-        { name: "Windows Server", icon: "winserver" },
-        { name: "Linux (Debian / Ubuntu)", icon: "linux" },
-        { name: "Terminal / CLI", icon: "cli" },
-        { name: "Impressoras em Rede", icon: "printer" },
-        { name: "Inventário de TI", icon: "inventory" }
+        { name: "Wireshark", icon: "wireshark" }
       ]
     },
     {
       id: "cybersecurity",
-      name: "Segurança da Informação & IAM",
-      description: "Controle de acesso, administração de privilégios, conformidade e defesa de redes.",
+      name: "Segurança & Gestão de Acessos (IAM)",
+      description: "Controle de privilégios, defesa perimetral e políticas corporativas.",
       icon: "security",
+      faIcon: "fa-user-shield",
       skills: [
-        { name: "Gestão de Acessos (IAM)", icon: "iam" },
-        { name: "Controle de Permissões", icon: "permission" },
         { name: "Active Directory (AD)", icon: "ad" },
-        { name: "Fundamentos de Cibersegurança", icon: "cyber" },
-        { name: "Firewall & Regras", icon: "firewall" },
-        { name: "Listas de Acesso (ACLs)", icon: "acl" },
+        { name: "IAM & MFA", icon: "iam" },
+        { name: "Firewalls & Regras", icon: "firewall" },
         { name: "Hardening de Estações", icon: "hardening" },
-        { name: "LGPD & Privacidade", icon: "lgpd" },
-        { name: "ISO/IEC 27001", icon: "iso" },
-        { name: "Políticas de Senha & MFA", icon: "mfa" }
+        { name: "LGPD", icon: "lgpd" },
+        { name: "ISO 27001", icon: "iso" }
       ]
     },
     {
-      id: "data",
-      name: "Dados & Análise",
-      description: "Modelagem, consultas a bancos de dados relacionais, visualização analítica e IA aplicada.",
-      icon: "database",
+      id: "systems",
+      name: "Sistemas Operacionais & Virtualização",
+      description: "Sustentação de servidores corporativos, hipervisores e ambientes de nuvem.",
+      icon: "server",
+      faIcon: "fa-server",
       skills: [
-        { name: "SQL Relacional", icon: "sql" },
-        { name: "Banco de Dados", icon: "database" },
-        { name: "Power BI", icon: "powerbi" },
-        { name: "IA Generativa & Prompts", icon: "ai" },
-        { name: "Excel Avançado", icon: "excel" },
-        { name: "Análise de Dados", icon: "analytics" }
+        { name: "Linux (Debian/Ubuntu/Mint)", icon: "linux" },
+        { name: "Windows Server", icon: "winserver" },
+        { name: "VMware & QEMU", icon: "vmware" },
+        { name: "AWS Fundamentals", icon: "aws" },
+        { name: "Suporte N1/N2", icon: "support" }
       ]
     },
     {
-      id: "programming",
-      name: "Programação & Automação",
-      description: "Lógica de programação, scripts de automação e noções de desenvolvimento web.",
+      id: "automation",
+      name: "Automação & Ferramentas Operacionais",
+      description: "Scripts de rotinas técnicas e manipulação de fluxos operacionais.",
       icon: "code",
+      faIcon: "fa-terminal",
       skills: [
         { name: "Python", icon: "python" },
-        { name: "Lógica de Programação", icon: "logic" },
+        { name: "Bash / Shell CLI", icon: "cli" },
         { name: "Git & GitHub", icon: "git" },
-        { name: "HTML5 & CSS3", icon: "html" },
-        { name: "JavaScript", icon: "js" },
-        { name: "Algoritmos", icon: "algo" }
+        { name: "Shell Script", icon: "cli" }
       ]
     },
     {
-      id: "cloud",
-      name: "Cloud & Virtualização",
-      description: "Ambientes virtualizados locais e fundamentos de computação em nuvem pública.",
-      icon: "cloud",
+      id: "telemetry",
+      name: "Telemetria, Redes & Monitoramento (NOC)",
+      description: "Supervisão contínua de ativos, métricas de tráfego e análise de pacotes.",
+      icon: "network",
+      faIcon: "fa-chart-line",
       skills: [
-        { name: "VirtualBox", icon: "vbox" },
-        { name: "VMware Workstation", icon: "vmware" },
-        { name: "QEMU", icon: "qemu" },
-        { name: "AWS Cloud Fundamentals", icon: "aws" }
+        { name: "Zabbix", icon: "network" },
+        { name: "SNMP", icon: "protocol" },
+        { name: "Syslog", icon: "protocol" },
+        { name: "Wireshark", icon: "wireshark" },
+        { name: "ICMP / Telemetria", icon: "protocol" },
+        { name: "Diagnóstico de Tráfego", icon: "router" }
+      ]
+    },
+    {
+      id: "cloud_data",
+      name: "Cloud, Dados & Tecnologias Aplicadas",
+      description: "Repositórios em nuvem, consultas estruturadas e ferramentas modernas.",
+      icon: "cloud",
+      faIcon: "fa-cloud",
+      skills: [
+        { name: "AWS Cloud", icon: "aws" },
+        { name: "Firebase", icon: "sql" },
+        { name: "SQL Relacional", icon: "sql" },
+        { name: "Streamlit", icon: "code" },
+        { name: "IA Generativa & Prompts", icon: "ai" }
       ]
     }
   ],
@@ -291,7 +283,7 @@ const INITIAL_PORTFOLIO_DATA = {
   ]
 };
 
-const STORAGE_KEY = "emily_portfolio_data_v11";
+const STORAGE_KEY = "emily_portfolio_data_v15";
 
 class PortfolioDataService {
   constructor() {
@@ -407,7 +399,48 @@ class PortfolioDataService {
   }
 
   async getSkillsCategories() {
-    return this._fetchCollection("skills", this._localData.skillsCategories);
+    const raw = await this._fetchCollection("skills", this._localData.skillsCategories);
+    const allowedIds = ["networking", "cybersecurity", "systems", "automation", "telemetry", "cloud_data"];
+
+    // Limpeza em background de quaisquer documentos legados de programação no Firestore
+    if (db) {
+      raw.forEach(async (cat) => {
+        const name = (cat.name || "").toLowerCase();
+        const id = (cat.id || "").toLowerCase();
+        if (
+          name.includes("programação") ||
+          name.includes("programacao") ||
+          id.includes("dev") ||
+          id.includes("programming") ||
+          id.includes("prog") ||
+          (!allowedIds.includes(id) && name.includes("automação"))
+        ) {
+          try {
+            await setDoc(doc(db, "skills", cat.id), { _deleted: true }, { merge: true });
+            await deleteDoc(doc(db, "skills", cat.id));
+          } catch (e) {}
+        }
+      });
+    }
+
+    const filtered = raw.filter((cat) => {
+      const name = (cat.name || "").toLowerCase();
+      const id = (cat.id || "").toLowerCase();
+      return (
+        !name.includes("programação") &&
+        !name.includes("programacao") &&
+        allowedIds.includes(id)
+      );
+    });
+
+    // Ordenação canônica estrita para os 6 cards
+    filtered.sort((a, b) => {
+      const idxA = allowedIds.indexOf((a.id || "").toLowerCase());
+      const idxB = allowedIds.indexOf((b.id || "").toLowerCase());
+      return (idxA === -1 ? 99 : idxA) - (idxB === -1 ? 99 : idxB);
+    });
+
+    return filtered.slice(0, 6);
   }
 
   async saveSkillCategory(cat) {

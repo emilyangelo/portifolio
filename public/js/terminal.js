@@ -168,6 +168,63 @@
           this.inputEl.focus();
         }
       });
+
+      // Controles do Widget Flutuante (Toggle, Close, Minimize)
+      const toggleBtn = document.getElementById("terminal-widget-toggle");
+      const floatingWidget = document.getElementById("terminal-floating-widget");
+      const closeBtn = this.terminalEl.querySelector(".btn-close");
+      const minimizeBtn = this.terminalEl.querySelector(".btn-minimize");
+
+      if (toggleBtn && floatingWidget) {
+        toggleBtn.addEventListener("click", () => {
+          const isClosed = floatingWidget.classList.contains("hidden");
+          if (isClosed) {
+            floatingWidget.classList.remove("hidden");
+            toggleBtn.classList.add("active");
+            toggleBtn.setAttribute("aria-expanded", "true");
+            if (this.inputEl) this.inputEl.focus();
+            this._scrollToBottom();
+          } else {
+            floatingWidget.classList.add("hidden");
+            toggleBtn.classList.remove("active");
+            toggleBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      if (closeBtn && floatingWidget) {
+        closeBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          floatingWidget.classList.add("hidden");
+          if (toggleBtn) {
+            toggleBtn.classList.remove("active");
+            toggleBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      if (minimizeBtn && floatingWidget) {
+        minimizeBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          floatingWidget.classList.add("hidden");
+          if (toggleBtn) {
+            toggleBtn.classList.remove("active");
+            toggleBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      const closeXBtn = document.getElementById("terminal-close-x-btn");
+      if (closeXBtn && floatingWidget) {
+        closeXBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          floatingWidget.classList.add("hidden");
+          if (toggleBtn) {
+            toggleBtn.classList.remove("active");
+            toggleBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
     }
 
     _scrollToBottom() {
